@@ -42,6 +42,21 @@ export default {
       },
       release_date: {
         type: Sequelize.STRING
+      },
+      quantity_available: {
+        type: Sequelize.INTEGER
+      },
+      amount: {
+        type: Sequelize.DECIMAL(20, 4).UNSIGNED,
+        allowNull: false,
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     }),
     down: queryInterface => queryInterface.dropTable('Books')

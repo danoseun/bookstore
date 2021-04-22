@@ -19,6 +19,14 @@ export default {
         type: Sequelize.INTEGER,
         allowNull: false,
         required: true
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     }),
     down: queryInterface => queryInterface.dropTable('BookReactions')

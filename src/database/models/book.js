@@ -42,6 +42,13 @@ export default (sequelize, DataTypes) => {
         },
         release_date: {
           type: DataTypes.STRING
+        },
+        quantity_available: {
+          type: DataTypes.INTEGER
+        },
+        amount: {
+          type: DataTypes.DECIMAL(20, 4).UNSIGNED,
+          allowNull: false,
         }
       },
     );
