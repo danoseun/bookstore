@@ -8,6 +8,7 @@
     "dev": "nodemon --exec babel-node src/index",
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
+    "undo:seed": "npx sequelize-cli db:seed:undo:all",
     "test": "export NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate&&nyc --require @babel/register  mocha ./src/tests/** --timeout 2000 --exit"
   },
   "repository": {
@@ -22,12 +23,14 @@
   "homepage": "https://github.com/danoseun/bookstore#readme",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.25.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
     "fs-extra": "^9.1.0",
+    "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "pg": "^8.6.0",
