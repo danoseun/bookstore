@@ -49,7 +49,11 @@ export default (sequelize, DataTypes) => {
         amount: {
           type: DataTypes.DECIMAL(20, 4).UNSIGNED,
           allowNull: false,
-        }
+        },
+        featured: {
+          type: DataTypes.BOOLEAN,
+          allowNull: false,
+        },
       },
     );
     Book.associate = (models) => {

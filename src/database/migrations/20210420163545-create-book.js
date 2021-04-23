@@ -50,6 +50,10 @@ export default {
         type: Sequelize.DECIMAL(20, 4).UNSIGNED,
         allowNull: false,
       },
+      featured: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

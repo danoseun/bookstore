@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
-//import { router } from './routes'
+import { router } from './routes'
 import { successResponse, errorResponse } from './utils/response';
 import { statusCodes } from './utils/statuscode';
 import { messages } from './utils/message';

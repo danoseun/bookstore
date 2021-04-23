@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node src/app",
-    "dev": "nodemon --exec babel-node src/app",
+    "dev": "nodemon --exec babel-node src/index",
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
     "test": "export NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate&&nyc --require @babel/register  mocha ./src/tests/** --timeout 2000 --exit"
@@ -24,14 +24,17 @@
     "@hapi/joi": "^17.1.1",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
+    "cloudinary": "^1.25.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "fs-extra": "^9.1.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.2",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "slug": "^4.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
