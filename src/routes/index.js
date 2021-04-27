@@ -4,11 +4,11 @@ import { bookObj } from '../controllers/book';
 
 
 
-const { uploadImage } = bookObj;
+const { uploadImage, getTwentyFeaturedBooks, allBooks, getCartItemsTotal } = bookObj;
 
 export const router = express.Router();
 
 router.post('/api/v1/uploads', fileUpload({useTempFiles: true}), uploadImage);
-// router.put('/api/v1/tabs/:tabId', updateTab);
-// router.get('/api/v1/tabs', getAllTabs);
-// router.delete('/api/v1/tabs/:tabId', removeTab);
+router.get('/api/v1/books', allBooks);
+router.get('/api/v1/featuredbooks', getTwentyFeaturedBooks);
+router.post('/api/v1/cart', getCartItemsTotal);

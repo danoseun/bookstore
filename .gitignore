@@ -105,3 +105,5 @@ dist
 
 # Unclassifieds
 .DS_Store
+migration/
+model/

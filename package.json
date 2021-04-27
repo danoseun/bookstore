@@ -9,6 +9,7 @@
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
     "undo:seed": "npx sequelize-cli db:seed:undo:all",
+    "move": "mv models models.bak && npx sequelize-cli init:models && mv models.bak/index.js models.bak/index.js.bak && mv models.bak",
     "test": "export NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate&&nyc --require @babel/register  mocha ./src/tests/** --timeout 2000 --exit"
   },
   "repository": {
@@ -49,5 +50,9 @@
     "chai-http": "^4.3.0",
     "mocha": "^8.3.2",
     "nodemon": "^2.0.7"
-  }
+  }, 
+    "engines" : { 
+      "node" : "=12.14.0" 
+    } 
+  
 }

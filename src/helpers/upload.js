@@ -25,7 +25,6 @@ cloudinary.config({
             })
             let resolvedUploads = await Promise.all(uploads);
             let result = resolvedUploads.map(obj => obj.secure_url);
-            console.log('>>>', result);
             return result;
         
         }

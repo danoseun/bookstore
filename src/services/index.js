@@ -14,6 +14,10 @@ class BaseService {
     index(options = {}) {
       return this.model.findAll(options);
     }
+
+    findAndCountAll(){
+        return this.model.findAndCountAll();
+    }
   
     show(resourceIdentifier) {
       const field = Object.keys(resourceIdentifier)[0]
@@ -28,4 +32,4 @@ class BaseService {
     }
   }
   
-  export default BaseService
+  export default BaseService;
