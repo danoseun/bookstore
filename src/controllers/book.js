@@ -271,9 +271,6 @@ export const bookObj = {
             });
               if(data.rows.length > 0){
                 return successResponseWithData(res, statusCodes.success, messages.success, data.rows);
-              // return res
-              // .status(200)
-              // .json({ data: data.rows, offset, limit, total: data.count });
            }
              else {
                 return errorResponse(res, statusCodes.notFound, messages.notFound);

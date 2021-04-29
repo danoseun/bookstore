@@ -1,6 +1,8 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-
+import { statusCodes } from '../utils/statuscode';
+import { messages } from '../utils/message';
+import { errorResponse } from '../utils/response';
 
 dotenv.config();
 
@@ -16,10 +18,11 @@ export const createToken = (payload) => {
 export const verifyToken = (req, res, next) => {
   let token = req.headers.authorization;
   if (!token) {
-    return res.status(403).json({
-      status: 403,
-      error: 'No token supplied'
-    });
+    return errorResponse(res, statusCodes.forbidden, messages.noToken)
+    // return res.status(403).json({
+    //   status: 403,
+    //   error: 'No token supplied'
+    // });
   }
   token = token.split(' ')[1];
      
@@ -27,15 +30,13 @@ export const verifyToken = (req, res, next) => {
 
       if (error) {
         if (error.message.includes('signature')) {
-          return res.status(403).json({
-            status: 403,
-            error: 'Invalid token supplied'
-          });
+            return errorResponse(res, statusCodes.forbidden, messages.invalidToken);
+        //   return res.status(403).json({
+        //     status: 403,
+        //     error: 'Invalid token supplied'
+        //   });
         }
-        return res.status(403).json({
-          status: 403,
-          error: error.message
-        });
+        return errorResponse(res, statusCodes.forbidden, error.message);
       }
       req.authData = authData;
       return next();

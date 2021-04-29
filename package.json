@@ -8,9 +8,10 @@
     "dev": "nodemon --exec babel-node src/index",
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
+    "drop": "npx sequelize-cli db:drop",
+    "create": "npx sequelize-cli db:create",
     "undo:seed": "npx sequelize-cli db:seed:undo:all",
-    "move": "mv models models.bak && npx sequelize-cli init:models && mv models.bak/index.js models.bak/index.js.bak && mv models.bak",
-    "test": "export NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate&&nyc --require @babel/register  mocha ./src/tests/** --timeout 2000 --exit"
+    "test": "export NODE_ENV=test&&npm run drop&&npm run create&&npm run migrate&&npm run seed&&mocha --no-timeout ./src/tests/*.js --require @babel/register --exit"
   },
   "repository": {
     "type": "git",

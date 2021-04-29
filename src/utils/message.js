@@ -11,5 +11,7 @@ export const messages = {
   quantityOverLoad: (slug) => `you have selected more than we have in stock for ${slug}`,
   invalidRating: 'invalid rating value',
   ratingMisnomer: 'rating must be between 1- 5',
-  reactionRemoved: 'reaction removed'
+  reactionRemoved: 'reaction removed',
+  invalidToken: 'Invalid token supplied',
+  noToken: 'No token supplied'
 };

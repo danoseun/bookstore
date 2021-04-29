@@ -26,7 +26,7 @@ export const ratingValidator = {
         }
 
         const foundBook = await BookService.show({slug: slug});
-        console.log('1', foundBook.slug);
+        //console.log('1', foundBook.slug);
          if(foundBook === null || foundBook === undefined){
             errorResponse(res, statusCodes.notFound, messages.notFound);
             return;
