@@ -41,7 +41,8 @@ npm test
 - Some APIs have been protected to mirror real life cases better
 
 ## REQUIREMENTS NOT COVERED
-- Only a single item(object) can be added to the update cart endpoint
+- Only a single item(object) can be added to the update cart endpoint meaning more than
+    one item can't be added to the update endpoint.
 
 ## IMPROVEMENTS
 - More tests could have been written.

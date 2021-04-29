@@ -4,6 +4,9 @@ import { bookObj, userObj } from '../controllers';
 import { verifyToken } from '../middlewares/auth';
 import { userValidator } from '../validations/user';
 import { ratingValidator } from '../validations/rating';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const { validateRating } = ratingValidator;
 const { validateUser } = userValidator;
