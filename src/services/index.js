@@ -18,6 +18,10 @@ class BaseService {
     findAndCountAll(){
         return this.model.findAndCountAll();
     }
+
+    findAndCountAllOptions(options = {}){
+      return this.model.findAndCountAll(options)
+    }
   
     show(resourceIdentifier) {
       const field = Object.keys(resourceIdentifier)[0]
@@ -25,6 +29,12 @@ class BaseService {
       return this.model.findOne({
         where: {[field]: resourceIdentifier[field]}
       })
+    }
+
+    showWithOptions(where){
+      return this.model.findOne({
+        where
+      });
     }
   
     destroy(resourceIdentifier) {

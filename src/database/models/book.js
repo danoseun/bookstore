@@ -87,7 +87,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Book.hasMany(models.BookReaction, {
-        foreignKey: 'bookId',
+        foreignKey: 'bookSlug',
         as: 'bookReactions'
       });
       Book.hasMany(models.Rating, { foreignKey: 'bookSlug', as: 'ratings' });

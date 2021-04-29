@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       BookReaction.belongsTo(models.Book, {
-        foreignKey: 'bookId'
+        foreignKey: 'bookSlug'
       });
     }
   }
@@ -62,8 +62,8 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         required: true
     },
-    bookId: {
-        type: DataTypes.INTEGER,
+    bookSlug: {
+        type: DataTypes.STRING,
         allowNull: false,
         required: true
       },

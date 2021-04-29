@@ -15,8 +15,8 @@ export default {
       allowNull: false,
       required: true
   },
-    bookId: {
-      type: Sequelize.INTEGER,
+    bookSlug: {
+      type: Sequelize.STRING,
       allowNull: false,
       required: true
     },

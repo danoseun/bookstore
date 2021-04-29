@@ -36,6 +36,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
+    "redis": "^3.1.2",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0",
     "slug": "^4.0.4"
@@ -50,9 +51,8 @@
     "chai-http": "^4.3.0",
     "mocha": "^8.3.2",
     "nodemon": "^2.0.7"
-  }, 
-    "engines" : { 
-      "node" : "=12.14.0" 
-    } 
-  
+  },
+  "engines": {
+    "node": "=12.14.0"
+  }
 }
